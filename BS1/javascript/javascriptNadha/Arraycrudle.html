@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array-Basic</title>
+</head>
+<body>
+    <script>
+        var datas=['Annamalai',4,false]
+       // document.writeln(datas)
+        let data1=new Array();
+        data1.push('NandhaGopal')
+        data1.push(14)
+        data1.push(true)
+        data1.push('salem')
+        document.writeln(data1)
+
+        // let print=()=>{
+        //     alert(data1)
+
+        // }
+       // data1.map(print)
+      //  data1.pop()
+        //document.writeln(data1)
+        //a=10,a==10,a===10 
+        
+        let newone=prompt("Tell us position  u want delete")
+        data1=data1.filter((data,pos)=>
+        {
+            return data!==data1[newone];//14!==data1[1]
+        } )
+       data1.map((data)=>
+       {
+        document.writeln("<b>"+data+"</b")
+       })
+    </script>
+    
+</body>
+</html>
