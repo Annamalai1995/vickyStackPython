@@ -1,0 +1,16 @@
+a=['Annamalai','M','priya']
+print(a)
+a.append("anu")
+print(a)
+print(len(a))
+a.insert(1,'sumitha')
+print(a)
+print(len(a))
+a.append('mugil')
+print(a)
+a[2]='Ashika'
+print(a)
+a.append('Ashika')
+print(a)
+a.reverse()
+print(a)

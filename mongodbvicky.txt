@@ -1,0 +1,1175 @@
+Microsoft Windows [Version 10.0.19045.3208]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\SAM>mongosh "mongodb+srv://cluster0.eemjyoy.mongodb.net/" --apiVersion 1 --username sam
+Enter password: *********
+Current Mongosh Log ID: 64bf55f400872407742beb32
+Connecting to:          mongodb+srv://<credentials>@cluster0.eemjyoy.mongodb.net/?appName=mongosh+1.10.1
+Using MongoDB:          6.0.8 (API Version 1)
+Using Mongosh:          1.10.1
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+Atlas atlas-dygukl-shard-0 [primary] test> show dbs
+office   72.00 KiB
+sam      40.00 KiB
+admin   336.00 KiB
+local     5.04 GiB
+Atlas atlas-dygukl-shard-0 [primary] test> use office
+switched to db office
+Atlas atlas-dygukl-shard-0 [primary] office> show collections
+members
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.bulkWrite([{insertOne:{"expertName":'Deepika',"technology":"python","experienece":4,"skills":['java','wordpresss'],"location":'coimbatorey'}},{insertOne:{"expertName":'Karthi',"technology":"C","experienece":2,"skills":['java','python'],"location":'chennai'}}])
+{
+  acknowledged: true,
+  insertedCount: 2,
+  insertedIds: {
+    '0': ObjectId("64bf56bd00872407742beb33"),
+    '1': ObjectId("64bf56bd00872407742beb34")
+  },
+  matchedCount: 0,
+  modifiedCount: 0,
+  deletedCount: 0,
+  upsertedCount: 0,
+  upsertedIds: {}
+}
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find().pretty();
+[
+  {
+    _id: ObjectId("64b4ce56b1d44d9222895eb8"),
+    '"expertName"': '"Annamalai'
+  },
+  { _id: ObjectId("64b4ceadb1d44d9222895eb9"), '"Technology"': 'java' },
+  { _id: ObjectId("64b4ced0b1d44d9222895eba"), '"experiance"': 4 },
+  {
+    _id: ObjectId("64b4cf23b1d44d9222895ebb"),
+    Skills: 'Java AND Python',
+    Place: 'salem'
+  },
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"Place":"chennai"})
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"place":"salem"});
+
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"locaion":"salem"});
+    Skills: 'FrontEnd And BackEnd',
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"location":"salem"});
+  },
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"location":"salem"})
+    _id: ObjectId("64b4d557b4fcd6b2c57b770c"),
+Atlas atlas-dygukl-shard-0 [primary] office>
+    Technology: 'Pythonstack',
+Atlas atlas-dygukl-shard-0 [primary] office>
+    Skills: 'FrontEnd',
+Atlas atlas-dygukl-shard-0 [primary] office>
+  },
+Atlas atlas-dygukl-shard-0 [primary] office>
+    _id: ObjectId("64b4d557b4fcd6b2c57b770d"),
+Atlas atlas-dygukl-shard-0 [primary] office>
+    Technology: 'Testing',
+Atlas atlas-dygukl-shard-0 [primary] office>
+    Skills: 'Selenium',
+Atlas atlas-dygukl-shard-0 [primary] office>
+  },
+Atlas atlas-dygukl-shard-0 [primary] office>
+    _id: ObjectId("64bf56bd00872407742beb33"),
+Atlas atlas-dygukl-shard-0 [primary] office>
+    technology: 'python',
+Atlas atlas-dygukl-shard-0 [primary] office>
+    skills: [ 'java', 'wordpresss' ],
+Atlas atlas-dygukl-shard-0 [primary] office>
+  },
+Atlas atlas-dygukl-shard-0 [primary] office>
+    _id: ObjectId("64bf56bd00872407742beb34"),
+Atlas atlas-dygukl-shard-0 [primary] office>
+    technology: 'C',
+Atlas atlas-dygukl-shard-0 [primary] office>
+    skills: [ 'java', 'python' ],
+Atlas atlas-dygukl-shard-0 [primary] office>
+  }
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find().pretty();
+[
+  {
+    _id: ObjectId("64b4ce56b1d44d9222895eb8"),
+    '"expertName"': '"Annamalai'
+  },
+  { _id: ObjectId("64b4ceadb1d44d9222895eb9"), '"Technology"': 'java' },
+  { _id: ObjectId("64b4ced0b1d44d9222895eba"), '"experiance"': 4 },
+  {
+    _id: ObjectId("64b4cf23b1d44d9222895ebb"),
+    Skills: 'Java AND Python',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770c"),
+    expertName: 'sathish',
+    Technology: 'Pythonstack',
+    Experiance: 4,
+    Skills: 'FrontEnd',
+    place: 'chennai'
+  },
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770d"),
+    expertName: 'kumar',
+    Technology: 'Testing',
+    Experiance: 3,
+    Skills: 'Selenium',
+    Place: 'Bangalore'
+  },
+  {
+    _id: ObjectId("64bf56bd00872407742beb33"),
+    expertName: 'Deepika',
+    technology: 'python',
+    experienece: 4,
+    skills: [ 'java', 'wordpresss' ],
+    location: 'coimbatorey'
+  },
+  {
+    _id: ObjectId("64bf56bd00872407742beb34"),
+    expertName: 'Karthi',
+    technology: 'C',
+    experienece: 2,
+    skills: [ 'java', 'python' ],
+    location: 'chennai'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"Place":"salem"});
+[
+  {
+    _id: ObjectId("64b4cf23b1d44d9222895ebb"),
+    Skills: 'Java AND Python',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"location":"chennai"});
+[
+  {
+    _id: ObjectId("64bf56bd00872407742beb34"),
+    expertName: 'Karthi',
+    technology: 'C',
+    experienece: 2,
+    skills: [ 'java', 'python' ],
+    location: 'chennai'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"Place":"chennai"});
+
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"Place":"salem"});
+[
+  {
+    _id: ObjectId("64b4cf23b1d44d9222895ebb"),
+    Skills: 'Java AND Python',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"Place":"Chennai"});
+
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"Place":"chennai"});
+
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"place":"chennai"});
+[
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770c"),
+    expertName: 'sathish',
+    Technology: 'Pythonstack',
+    Experiance: 4,
+    Skills: 'FrontEnd',
+    place: 'chennai'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"Place":"chennai"});
+
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"place":"chennai"});
+[
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770c"),
+    expertName: 'sathish',
+    Technology: 'Pythonstack',
+    Experiance: 4,
+    Skills: 'FrontEnd',
+    place: 'chennai'
+  }
+]
+
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"Experiance":{$gte:2}})
+[
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770c"),
+    expertName: 'sathish',
+    Technology: 'Pythonstack',
+    Experiance: 4,
+    Skills: 'FrontEnd',
+    place: 'chennai'
+  },
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770d"),
+    expertName: 'kumar',
+    Technology: 'Testing',
+    Experiance: 3,
+    Skills: 'Selenium',
+    Place: 'Bangalore'
+  }
+
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({$and:[{"Experiance":{$gte:2}},{"Experiance":{$lte:5}}]}).pretty();
+[
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770c"),
+    expertName: 'sathish',
+    Technology: 'Pythonstack',
+    Experiance: 4,
+    Skills: 'FrontEnd',
+    place: 'chennai'
+  },
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770d"),
+    expertName: 'kumar',
+    Technology: 'Testing',
+    Experiance: 3,
+    Skills: 'Selenium',
+    Place: 'Bangalore'
+  }
+]
+
+
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({$or:[{"Technology":"JavaStack"},{"Experiance":{$gte:5}},{"Place":"chennai"}]});
+[
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({$or:[{"Technology":"Pythonstack"},{"Experiance":{$gte:4}},{"Place":"chennai"}]});
+[
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770c"),
+    expertName: 'sathish',
+    Technology: 'Pythonstack',
+    Experiance: 4,
+    Skills: 'FrontEnd',
+    place: 'chennai'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({$or:[{"Technology":"Pythonstack"},{"Experiance":{$gte:4}},{"Place":"salem"}]});
+[
+  {
+    _id: ObjectId("64b4cf23b1d44d9222895ebb"),
+    Skills: 'Java AND Python',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770c"),
+    expertName: 'sathish',
+    Technology: 'Pythonstack',
+    Experiance: 4,
+    Skills: 'FrontEnd',
+    place: 'chennai'
+  }
+]
+
+
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"Place":{$in:["namakkal","Bangalore"]}})
+[
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770d"),
+    expertName: 'kumar',
+    Technology: 'Testing',
+    Experiance: 3,
+    Skills: 'Selenium',
+    Place: 'Bangalore'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"Place":{$in:["salem","Bangalore"]}})
+[
+  {
+    _id: ObjectId("64b4cf23b1d44d9222895ebb"),
+    Skills: 'Java AND Python',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770d"),
+    expertName: 'kumar',
+    Technology: 'Testing',
+    Experiance: 3,
+    Skills: 'Selenium',
+    Place: 'Bangalore'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"Place":{$in:["salem","coimbatorey"]}})
+[
+  {
+    _id: ObjectId("64b4cf23b1d44d9222895ebb"),
+    Skills: 'Java AND Python',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({"Place":{$in:["salem","Coimbatorey"]}})
+[
+  {
+    _id: ObjectId("64b4cf23b1d44d9222895ebb"),
+    Skills: 'Java AND Python',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  }
+]
+
+
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({ "location": /.*m.*/ })
+[
+  {
+    _id: ObjectId("64bf56bd00872407742beb33"),
+    expertName: 'Deepika',
+    technology: 'python',
+    experienece: 4,
+    skills: [ 'java', 'wordpresss' ],
+    location: 'coimbatorey'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({ "Place": /.*m.*/ })
+[
+  {
+    _id: ObjectId("64b4cf23b1d44d9222895ebb"),
+    Skills: 'Java AND Python',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({ "Place": /.*i.*/ })
+
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({ "Place": /.*i.*/ })
+
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find({ "Place": /.*e.*/ })
+[
+  {
+    _id: ObjectId("64b4cf23b1d44d9222895ebb"),
+    Skills: 'Java AND Python',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770d"),
+    expertName: 'kumar',
+    Technology: 'Testing',
+    Experiance: 3,
+    Skills: 'Selenium',
+    Place: 'Bangalore'
+  }
+]
+
+
+
+
+
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find({"expertName":/D.*/})
+[
+  {
+    _id: ObjectId("64bf56bd00872407742beb33"),
+    expertName: 'Deepika',
+    technology: 'python',
+    experienece: 4,
+    skills: [ 'java', 'wordpresss' ],
+    location: 'coimbatorey'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find({"expertName":/s.*/})
+[
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770c"),
+    expertName: 'sathish',
+    Technology: 'Pythonstack',
+    Experiance: 4,
+    Skills: 'FrontEnd',
+    place: 'chennai'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find({"expertName":/A.*/})
+
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find({"expertName":/M.*/})
+[
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find({"expertName":/k.*/})
+[
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770d"),
+    expertName: 'kumar',
+    Technology: 'Testing',
+    Experiance: 3,
+    Skills: 'Selenium',
+    Place: 'Bangalore'
+  },
+  {
+    _id: ObjectId("64bf56bd00872407742beb33"),
+    expertName: 'Deepika',
+    technology: 'python',
+    experienece: 4,
+    skills: [ 'java', 'wordpresss' ],
+    location: 'coimbatorey'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find({"expertName":/s.*/})
+[
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770c"),
+    expertName: 'sathish',
+    Technology: 'Pythonstack',
+    Experiance: 4,
+    Skills: 'FrontEnd',
+    place: 'chennai'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find({"expertName":/k.*/})
+[
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770d"),
+    expertName: 'kumar',
+    Technology: 'Testing',
+    Experiance: 3,
+    Skills: 'Selenium',
+    Place: 'Bangalore'
+  },
+  {
+    _id: ObjectId("64bf56bd00872407742beb33"),
+    expertName: 'Deepika',
+    technology: 'python',
+    experienece: 4,
+    skills: [ 'java', 'wordpresss' ],
+    location: 'coimbatorey'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find({"expertName":/K.*/})
+[
+  {
+    _id: ObjectId("64bf56bd00872407742beb34"),
+    expertName: 'Karthi',
+    technology: 'C',
+    experienece: 2,
+    skills: [ 'java', 'python' ],
+    location: 'chennai'
+  }
+]
+
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find({"expertName":/A.*/}).count()
+0
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find({"expertName":/K.*/}).count()
+1
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find({"expertName":/D.*/}).count()
+1
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find({"expertName":/s.*/}).count()
+1
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find().sort({"expertName":0})
+MongoInvalidArgumentError: Invalid sort direction: 0
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find().sort({"expertName":1})
+[
+  {
+    _id: ObjectId("64b4ce56b1d44d9222895eb8"),
+    '"expertName"': '"Annamalai'
+  },
+  { _id: ObjectId("64b4ceadb1d44d9222895eb9"), '"Technology"': 'java' },
+  { _id: ObjectId("64b4ced0b1d44d9222895eba"), '"experiance"': 4 },
+  {
+    _id: ObjectId("64b4cf23b1d44d9222895ebb"),
+    Skills: 'Java AND Python',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64bf56bd00872407742beb33"),
+    expertName: 'Deepika',
+    technology: 'python',
+    experienece: 4,
+    skills: [ 'java', 'wordpresss' ],
+    location: 'coimbatorey'
+  },
+  {
+    _id: ObjectId("64bf56bd00872407742beb34"),
+    expertName: 'Karthi',
+    technology: 'C',
+    experienece: 2,
+    skills: [ 'java', 'python' ],
+    location: 'chennai'
+  },
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770d"),
+    expertName: 'kumar',
+    Technology: 'Testing',
+    Experiance: 3,
+    Skills: 'Selenium',
+    Place: 'Bangalore'
+  },
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770c"),
+    expertName: 'sathish',
+    Technology: 'Pythonstack',
+    Experiance: 4,
+    Skills: 'FrontEnd',
+    place: 'chennai'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.find().sort({"expertName":-1})
+[
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770c"),
+    expertName: 'sathish',
+    Technology: 'Pythonstack',
+    Experiance: 4,
+    Skills: 'FrontEnd',
+    place: 'chennai'
+  },
+  {
+    _id: ObjectId("64b4d557b4fcd6b2c57b770d"),
+    expertName: 'kumar',
+    Technology: 'Testing',
+    Experiance: 3,
+    Skills: 'Selenium',
+    Place: 'Bangalore'
+  },
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64bf56bd00872407742beb34"),
+    expertName: 'Karthi',
+    technology: 'C',
+    experienece: 2,
+    skills: [ 'java', 'python' ],
+    location: 'chennai'
+  },
+  {
+    _id: ObjectId("64bf56bd00872407742beb33"),
+    expertName: 'Deepika',
+    technology: 'python',
+    experienece: 4,
+    skills: [ 'java', 'wordpresss' ],
+    location: 'coimbatorey'
+  },
+  {
+    _id: ObjectId("64b4ce56b1d44d9222895eb8"),
+    '"expertName"': '"Annamalai'
+  },
+  { _id: ObjectId("64b4ceadb1d44d9222895eb9"), '"Technology"': 'java' },
+  { _id: ObjectId("64b4ced0b1d44d9222895eba"), '"experiance"': 4 },
+  {
+    _id: ObjectId("64b4cf23b1d44d9222895ebb"),
+    Skills: 'Java AND Python',
+    Place: 'salem'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.deleteMany({"Place":{$nin:['salem']}})
+{ acknowledged: true, deletedCount: 7 }
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find()
+[
+  {
+    _id: ObjectId("64b4cf23b1d44d9222895ebb"),
+    Skills: 'Java AND Python',
+    Place: 'salem'
+  },
+  {
+    _id: ObjectId("64b4d1f0b4fcd6b2c57b770b"),
+    expertName: 'Manoj',
+    Technology: 'JavaStack',
+    Experiance: 2,
+    Skills: 'FrontEnd And BackEnd',
+    Place: 'salem'
+  }
+]
+
+
+delete one item
+db.first.deleteOne()
+db.first.remove()
+
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.deleteMany({"location":{$nin:['chennai']}})
+{ acknowledged: true, deletedCount: 2 }
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find()
+
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find()
+
+Atlas atlas-dygukl-shard-0 [primary] office> db.members.deleteMany({"Place":{$nin:['Bangalore']}})
+{ acknowledged: true, deletedCount: 0 }
+Atlas atlas-dygukl-shard-0 [primary] office>  db.members.find()
+
+
+use new-database-name
+
+new collection:
+db.collection-name.insertOne({})
+
+Atlas atlas-hp69qc-shard-0 [primary] forenoon> db.mobile.insertOne({"brand":"realme","features":['dolby vision','dolby aAtlas atlas-hp69qc-shard-0 [primary] forenoon> db.mobile.insertOne({"brand":"realme","features":['dolby vision','dolby atmos'],"model":"7s","price":12500,"ram":8,"internal":64})
+{
+  acknowledged: true,
+  insertedId: ObjectId("6316d9923649220b83768d27")
+}
+Atlas atlas-hp69qc-shard-0 [primary] forenoon> db.mobile.find()
+[
+  {
+    _id: ObjectId("6316d9923649220b83768d27"),
+    brand: 'realme',
+    features: [ 'dolby vision', 'dolby atmos' ],
+    model: '7s',
+    price: 12500,
+    ram: 8,
+    internal: 64
+  }
+]
+
+Atlas atlas-hp69qc-shard-0 [primary] forenoon> db.mobile.insertMany([{"brand":"vivo","features":['fhd','gorilla','dolby vision'],"model":'v20',"ram":4,"internal":64,"price":8700},{"brand":"oppo","model":'8s',"price":15000,"features":['gaming','pop up camera'],"ram":6,"internal":128},{"brand":"poco","model":'c3',"price":8000,"features":['gaming','dolby atmos'],"internal":64,"ram":6},{"brand":"iqoo","model":'z3',"price":19800,"features":['5g','gaming'],"internal":128,"ram":8}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6316db933649220b83768d28"),
+    '1': ObjectId("6316db933649220b83768d29"),
+    '2': ObjectId("6316db933649220b83768d2a"),
+    '3': ObjectId("6316db933649220b83768d2b")
+  }
+}
+
+Atlas atlas-hp69qc-shard-0 [primary] forenoon> db.mobile.find()
+[
+  {
+    _id: ObjectId("6316d9923649220b83768d27"),
+    brand: 'realme',
+    features: [ 'dolby vision', 'dolby atmos' ],
+    model: '7s',
+    price: 12500,
+    ram: 8,
+    internal: 64
+  },
+  {
+    _id: ObjectId("6316db933649220b83768d28"),
+    brand: 'vivo',
+    features: [ 'fhd', 'gorilla', 'dolby vision' ],
+    model: 'v20',
+    ram: 4,
+    internal: 64,
+    price: 8700
+  },
+  {
+    _id: ObjectId("6316db933649220b83768d29"),
+    brand: 'oppo',
+    model: '8s',
+    price: 15000,
+    features: [ 'gaming', 'pop up camera' ],
+    ram: 6,
+    internal: 128
+  },
+  {
+    _id: ObjectId("6316db933649220b83768d2a"),
+    brand: 'poco',
+    model: 'c3',
+    price: 8000,
+    features: [ 'gaming', 'dolby atmos' ],
+    internal: 64,
+    ram: 6
+  },
+  {
+    _id: ObjectId("6316db933649220b83768d2b"),
+    brand: 'iqoo',
+    model: 'z3',
+    price: 19800,
+    features: [ '5g', 'gaming' ],
+    internal: 128,
+    ram: 8
+  }
+]
+
+
+
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.Mobile.update({"model":"8s"},{$set:{"ram":8}});
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.Mobile.find()
+[
+  {
+    _id: ObjectId("64c3501911bff86211b37e70"),
+    brand: 'realme',
+    features: [ 'dolby vision', 'dolby atmos' ],
+    model: '7s',
+    price: 12500,
+    ram: 8,
+    internal: 64
+  },
+  {
+    _id: ObjectId("64c3508211bff86211b37e71"),
+    brand: 'vivo',
+    features: [ 'fhd', 'gorilla', 'dolby vision' ],
+    model: 'v20',
+    ram: 4,
+    internal: 64,
+    price: 8700
+  },
+  {
+    _id: ObjectId("64c3508211bff86211b37e72"),
+    brand: 'oppo',
+    model: '8s',
+    price: 15000,
+    features: [ 'gaming', 'pop up camera' ],
+    ram: 8,
+    internal: 128
+  },
+  {
+    _id: ObjectId("64c3508211bff86211b37e73"),
+    brand: 'poco',
+    model: 'c3',
+    price: 8000,
+    features: [ 'gaming', 'dolby atmos' ],
+    internal: 64,
+    ram: 6
+  },
+  {
+    _id: ObjectId("64c3508211bff86211b37e74"),
+    brand: 'iqoo',
+    model: 'z3',
+    price: 19800,
+    features: [ '5g', 'gaming' ],
+    internal: 128,
+    ram: 8
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.Mobile.updateOne({"internal":128,"brand":"iqoo"},{$set:{"price":15500}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.Mobile.find()
+[
+  {
+    _id: ObjectId("64c3501911bff86211b37e70"),
+    brand: 'realme',
+    features: [ 'dolby vision', 'dolby atmos' ],
+    model: '7s',
+    price: 12500,
+    ram: 8,
+    internal: 64
+  },
+  {
+    _id: ObjectId("64c3508211bff86211b37e71"),
+    brand: 'vivo',
+    features: [ 'fhd', 'gorilla', 'dolby vision' ],
+    model: 'v20',
+    ram: 4,
+    internal: 64,
+    price: 8700
+  },
+  {
+    _id: ObjectId("64c3508211bff86211b37e72"),
+    brand: 'oppo',
+    model: '8s',
+    price: 15000,
+    features: [ 'gaming', 'pop up camera' ],
+    ram: 8,
+    internal: 128
+  },
+  {
+    _id: ObjectId("64c3508211bff86211b37e73"),
+    brand: 'poco',
+    model: 'c3',
+    price: 8000,
+    features: [ 'gaming', 'dolby atmos' ],
+    internal: 64,
+    ram: 6
+  },
+  {
+    _id: ObjectId("64c3508211bff86211b37e74"),
+    brand: 'iqoo',
+    model: 'z3',
+    price: 15500,
+    features: [ '5g', 'gaming' ],
+    internal: 128,
+    ram: 8
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.Mobile.find({"features":{$in:['dolby atmos']}})
+[
+  {
+    _id: ObjectId("64c3501911bff86211b37e70"),
+    brand: 'realme',
+    features: [ 'dolby vision', 'dolby atmos' ],
+    model: '7s',
+    price: 12500,
+    ram: 8,
+    internal: 64
+  },
+  {
+    _id: ObjectId("64c3508211bff86211b37e73"),
+    brand: 'poco',
+    model: 'c3',
+    price: 8000,
+    features: [ 'gaming', 'dolby atmos' ],
+    internal: 64,
+    ram: 6
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.Mobile.find({"features":{$in:['dolby vision']}})
+[
+  {
+    _id: ObjectId("64c3501911bff86211b37e70"),
+    brand: 'realme',
+    features: [ 'dolby vision', 'dolby atmos' ],
+    model: '7s',
+    price: 12500,
+    ram: 8,
+    internal: 64
+  },
+  {
+    _id: ObjectId("64c3508211bff86211b37e71"),
+    brand: 'vivo',
+    features: [ 'fhd', 'gorilla', 'dolby vision' ],
+    model: 'v20',
+    ram: 4,
+    internal: 64,
+    price: 8700
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.Mobile.find({"features":{$elemMatch:{$in:['game','gaming']}}})
+[
+  {
+    _id: ObjectId("64c3508211bff86211b37e72"),
+    brand: 'oppo',
+    model: '8s',
+    price: 15000,
+    features: [ 'gaming', 'pop up camera' ],
+    ram: 8,
+    internal: 128
+  },
+  {
+    _id: ObjectId("64c3508211bff86211b37e73"),
+    brand: 'poco',
+    model: 'c3',
+    price: 8000,
+    features: [ 'gaming', 'dolby atmos' ],
+    internal: 64,
+    ram: 6
+  },
+  {
+    _id: ObjectId("64c3508211bff86211b37e74"),
+    brand: 'iqoo',
+    model: 'z3',
+    price: 15500,
+    features: [ '5g', 'gaming' ],
+    internal: 128,
+    ram: 8
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] Phone> show dbs
+Phone   112.00 KiB
+office   36.00 KiB
+sam      40.00 KiB
+admin   336.00 KiB
+local     5.04 GiB
+Atlas atlas-dygukl-shard-0 [primary] Phone>
+
+Microsoft Windows [Version 10.0.19045.3208]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\SAM>mongosh "mongodb+srv://cluster0.eemjyoy.mongodb.net/" --apiVersion 1 --username sam
+Enter password: *********
+Current Mongosh Log ID: 64c88c599cf46e81c5c41a58
+Connecting to:          mongodb+srv://<credentials>@cluster0.eemjyoy.mongodb.net/?appName=mongosh+1.10.1
+Using MongoDB:          6.0.8 (API Version 1)
+Using Mongosh:          1.10.1
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+Atlas atlas-dygukl-shard-0 [primary] test> sho dbs
+Uncaught:
+SyntaxError: Missing semicolon. (1:3)
+
+> 1 | sho dbs
+    |    ^
+  2 |
+
+Atlas atlas-dygukl-shard-0 [primary] test> show dbs
+Phone   112.00 KiB
+office   72.00 KiB
+sam      40.00 KiB
+admin   336.00 KiB
+local     1.15 GiB
+Atlas atlas-dygukl-shard-0 [primary] test> use Phone
+switched to db Phone
+Atlas atlas-dygukl-shard-0 [primary] Phone>  db.students.insertMany([{"name":"Mohan","exp":2,"ctc":1.4},{"name":"gesnu","skill":'python',"location":"salem"},{"name":"priya","exp":1,"location":"salem"},{"name":"annamalai","exp":4,"ctc":2.5}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64c88ca89cf46e81c5c41a59"),
+    '1': ObjectId("64c88ca89cf46e81c5c41a5a"),
+    '2': ObjectId("64c88ca89cf46e81c5c41a5b"),
+    '3': ObjectId("64c88ca89cf46e81c5c41a5c")
+  }
+}
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.students.find()
+[
+  {
+    _id: ObjectId("64c88ca89cf46e81c5c41a59"),
+    name: 'Mohan',
+    exp: 2,
+    ctc: 1.4
+  },
+  {
+    _id: ObjectId("64c88ca89cf46e81c5c41a5a"),
+    name: 'gesnu',
+    skill: 'python',
+    location: 'salem'
+  },
+  {
+    _id: ObjectId("64c88ca89cf46e81c5c41a5b"),
+    name: 'priya',
+    exp: 1,
+    location: 'salem'
+  },
+  {
+    _id: ObjectId("64c88ca89cf46e81c5c41a5c"),
+    name: 'annamalai',
+    exp: 4,
+    ctc: 2.5
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.students.find({"exp":{$exists:true}})
+[
+  {
+    _id: ObjectId("64c88ca89cf46e81c5c41a59"),
+    name: 'Mohan',
+    exp: 2,
+    ctc: 1.4
+  },
+  {
+    _id: ObjectId("64c88ca89cf46e81c5c41a5b"),
+    name: 'priya',
+    exp: 1,
+    location: 'salem'
+  },
+  {
+    _id: ObjectId("64c88ca89cf46e81c5c41a5c"),
+    name: 'annamalai',
+    exp: 4,
+    ctc: 2.5
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.students.find({"location":{$exists:true}})
+[
+  {
+    _id: ObjectId("64c88ca89cf46e81c5c41a5a"),
+    name: 'gesnu',
+    skill: 'python',
+    location: 'salem'
+  },
+  {
+    _id: ObjectId("64c88ca89cf46e81c5c41a5b"),
+    name: 'priya',
+    exp: 1,
+    location: 'salem'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.corporates.insertMany([{"org":"relaiance industries","keyperson":"mukesh ambani","nature":"petrolium"},{"org":"adani groups","keyperson":"gowtham adani","nature":"gas"},{"org":"jet airways industries","keyperson":"paresh gosawmy","nature":"transport"},{"org":"allon solly","keyperson":"aditya birla groups","nature":"garments"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("64c88eda9cf46e81c5c41a5d"),
+    '1': ObjectId("64c88eda9cf46e81c5c41a5e"),
+    '2': ObjectId("64c88eda9cf46e81c5c41a5f"),
+    '3': ObjectId("64c88eda9cf46e81c5c41a60")
+  }
+}
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.corporates.find()
+[
+  {
+    _id: ObjectId("64c88eda9cf46e81c5c41a5d"),
+    org: 'relaiance industries',
+    keyperson: 'mukesh ambani',
+    nature: 'petrolium'
+  },
+  {
+    _id: ObjectId("64c88eda9cf46e81c5c41a5e"),
+    org: 'adani groups',
+    keyperson: 'gowtham adani',
+    nature: 'gas'
+  },
+  {
+    _id: ObjectId("64c88eda9cf46e81c5c41a5f"),
+    org: 'jet airways industries',
+    keyperson: 'paresh gosawmy',
+    nature: 'transport'
+  },
+  {
+    _id: ObjectId("64c88eda9cf46e81c5c41a60"),
+    org: 'allon solly',
+    keyperson: 'aditya birla groups',
+    nature: 'garments'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.corporates.createIndex({"org":"text","keyperson":"text","nature":"text"})
+org_text_keyperson_text_nature_text
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.corporates.updateOne({"org":"allon solly"},{$set:{"nature":"garments industries"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.corporates.find({$text:{$search:"industries"}})
+[
+  {
+    _id: ObjectId("64c88eda9cf46e81c5c41a60"),
+    org: 'allon solly',
+    keyperson: 'aditya birla groups',
+    nature: 'garments industries'
+  },
+  {
+    _id: ObjectId("64c88eda9cf46e81c5c41a5d"),
+    org: 'relaiance industries',
+    keyperson: 'mukesh ambani',
+    nature: 'petrolium'
+  },
+  {
+    _id: ObjectId("64c88eda9cf46e81c5c41a5f"),
+    org: 'jet airways industries',
+    keyperson: 'paresh gosawmy',
+    nature: 'transport'
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] Phone> db.corporates.find({$text:{$search:"industries"}},{score:{$meta:'textScore'}})
+[
+  {
+    _id: ObjectId("64c88eda9cf46e81c5c41a5d"),
+    org: 'relaiance industries',
+    keyperson: 'mukesh ambani',
+    nature: 'petrolium',
+    score: 0.75
+  },
+  {
+    _id: ObjectId("64c88eda9cf46e81c5c41a60"),
+    org: 'allon solly',
+    keyperson: 'aditya birla groups',
+    nature: 'garments industries',
+    score: 0.75
+  },
+  {
+    _id: ObjectId("64c88eda9cf46e81c5c41a5f"),
+    org: 'jet airways industries',
+    keyperson: 'paresh gosawmy',
+    nature: 'transport',
+    score: 0.6666666666666666
+  }
+]
+Atlas atlas-dygukl-shard-0 [primary] Phone> show collections
+corporates
+mobile
+Mobile
+students
+Atlas atlas-dygukl-shard-0 [primary] Phone>

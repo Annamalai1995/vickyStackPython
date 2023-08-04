@@ -1,0 +1,10 @@
+'''name=input("Enter the name")
+print(name)
+a=int(input("Enter the value A:"))
+print(a)
+b=int(input("Enter the value B:"))
+print(b)
+'''
+a=int(input("Enter the value A:"))
+b=int(input("Enter the value b:"))
+print(a+b)
